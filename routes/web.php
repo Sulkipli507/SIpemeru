@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\RoomController;
+use App\Models\Room;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('backend.master');
 });
+
+Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
+Route::post('/room/store', [RoomController::class, 'store'])->name("room-store");
+Route::get('/room/index', [RoomController::class, 'index'])->name("room-index");
+Route::delete('/room/delete/{id}',[RoomController::class, 'destroy'])->name("room-delete");
+Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit");
+Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
