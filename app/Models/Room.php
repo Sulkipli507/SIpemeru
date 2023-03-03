@@ -13,5 +13,7 @@ class Room extends Model
         'name',
         'code',
         'capacity',
+        'image',
+        'facility'
     ];
 }

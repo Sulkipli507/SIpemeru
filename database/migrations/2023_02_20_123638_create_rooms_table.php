@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("name");
             $table->string("code");
             $table->integer("capacity");
+            $table->string("image");
+            $table->string("facility");
             $table->timestamps();
         });
     }

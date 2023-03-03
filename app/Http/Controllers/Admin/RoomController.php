@@ -17,6 +17,8 @@ class RoomController extends Controller
             'code' => 'required',
             'name' => 'required',
             'capacity' => 'required',
+            'image' => 'required',
+            'facility' => 'required',
         ]);
         Room::create($request->all());
         return redirect()->route("room-index");

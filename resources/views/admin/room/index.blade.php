@@ -9,6 +9,8 @@
             <th scope="col">Kode Ruangan</th>
             <th scope="col">Nama Ruangan</th>
             <th scope="col">Kapasitas</th>
+            <th scope="col">Gambar</th>
+            <th scope="col">Fasilitas</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -19,6 +21,10 @@
             <td>{{$item->code}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->capacity}}</td>
+            <td>
+                <img src="{{asset('storage/'. $item->image)}}" width="48px"/>
+            </td>
+            <td>{{$item->facility}}</td>
             <td>
                 <a class="btn btn-primary" href="{{route("room-edit", $item->id)}}">Edit</a>
                 <form action="{{route("room-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">

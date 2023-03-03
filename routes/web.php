@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.master');
+    return view('welcome');
 });
 
 Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
