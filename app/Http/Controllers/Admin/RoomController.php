@@ -25,7 +25,7 @@ class RoomController extends Controller
         $rooms->code = $request->get('code');
         $rooms->name = $request->get('name');
         $rooms->capacity = $request->get('capacity');
-        
+
         if($request->file('image')){
  
             $image = $request->file('image')
@@ -45,13 +45,13 @@ class RoomController extends Controller
     }
 
     public function destroy($id){
-        $rooms = Room::where("id", $id)->first();
+        $rooms = Room::findOrfail($id);
         $rooms->delete();
         return redirect()->route("room-index");
     }
 
     public function edit($id){
-        $rooms = Room::where("id", $id)->first();
+        $rooms = Room::findOrfail($id);
         return view("admin.room.edit", compact("rooms"));
     }
 

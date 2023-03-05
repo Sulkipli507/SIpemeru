@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\RoomController;
 use App\Models\Room;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::get('/room/index', [RoomController::class, 'index'])->name("room-index");
 Route::delete('/room/delete/{id}',[RoomController::class, 'destroy'])->name("room-delete");
 Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit");
 Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

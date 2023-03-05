@@ -23,7 +23,7 @@
             <td>{{$item->capacity}}</td>
             <td>
                 @if($item->image)
-                    <img src="{{asset('storage/' . $item->image)}}" width="48px"/>
+                    <img src="{{asset('storage/' . $item->image)}}" width="70px"/>
                 @else 
                     No image
                 @endif
