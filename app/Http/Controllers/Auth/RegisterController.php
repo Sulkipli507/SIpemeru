@@ -8,8 +8,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -75,16 +75,9 @@ class RegisterController extends Controller
             'role' => "user",
         ]);
     }
-
-    // protected function registerValidation(Request $request){
-    // $rules = [
-    //     'username' => 'required|string|unique:users',
-    //     'email' => 'required|string|email|unique:users',
-    //     'phone' => 'required|string|min:10|max:13|unique:users',
-    //     'password' => 'required|string|min:8|confirmed',
-    // ];
-
-    // $validator = Validator::make($request->all(), $rules);
-
-    // return $validator;}
+    protected function registered()
+    {
+        Auth::logout();
+        return redirect(route('login'));
+    }
 }

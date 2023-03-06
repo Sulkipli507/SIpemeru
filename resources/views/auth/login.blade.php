@@ -107,7 +107,7 @@
 						<form method="POST" action="{{ route('login') }}">
                             @csrf
 							<div class="input-group custom">
-								<input id="email" type="text" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" placeholder="Email">
+								<input id="email" type="text" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old("email") }}">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -131,14 +131,14 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">
                                             {{ __('Login') }}
                                         </button>
-										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Login">
+										{{-- <input class="btn btn-primary btn-lg btn-block" type="submit" value="Login"> --}}
 									</div>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To Create Account</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="{{ route('register') }}">Register To Create Account</a>
 									</div>
 								</div>
 							</div>

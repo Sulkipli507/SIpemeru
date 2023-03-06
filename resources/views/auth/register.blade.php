@@ -98,12 +98,12 @@
 					<img src="{{ asset('backend/vendors/images/deskapp-logo.svg') }}" alt="">
 				</a>
 			</div>
-			<div class="login-menu">
+			<div>
 				<ul>
-					<li><a href="login.html">Login</a></li>
+					<li><a class="btn btn-primary" href="{{ route('login') }}">Login</a></li>
 				</ul>
 			</div>
-		</div>
+		</div> 
 	</div>
 	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
