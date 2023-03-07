@@ -21,6 +21,7 @@ class RoomController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'facility' => 'required',
         ]);
+        
         $rooms = new Room;
         $rooms->code = $request->get('code');
         $rooms->name = $request->get('name');

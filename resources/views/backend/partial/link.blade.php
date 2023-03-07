@@ -1,4 +1,4 @@
-<link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/vendors/images/apple-touch-icon.png')}}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{asset('backend/vendors/images/apple-touch-icon.png')}}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{asset('backend/vendors/images/favicon-32x32.png')}}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{asset('backend/vendors/images/favicon-16x16.png')}}">
 
@@ -11,6 +11,12 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/styles/core.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/styles/icon-font.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/styles/style.css')}}">
+	
+	{{-- Data tables --}}
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('backend/datatable/datatables.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('backend/datatable/datatables.min.css')}}">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css" rel="stylesheet"> --}}
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
