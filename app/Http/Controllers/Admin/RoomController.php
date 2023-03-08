@@ -37,7 +37,7 @@ class RoomController extends Controller
         $rooms->facility = $request->get('facility');
         $rooms->save();
         // Room::create($request->all());
-        return redirect()->route("room-index");
+        return redirect()->route("room-index")->with('status', 'Sukses insert data room');
     }
 
     public function index(){
@@ -48,7 +48,7 @@ class RoomController extends Controller
     public function destroy($id){
         $rooms = Room::findOrfail($id);
         $rooms->delete();
-        return redirect()->route("room-index");
+        return redirect()->route("room-index")->with('status', 'Sukses delete data room');
     }
 
     public function edit($id){
@@ -74,6 +74,6 @@ class RoomController extends Controller
         $rooms->facility = $request->get('facility');
         $rooms->save();
 
-        return redirect()->route("room-index");
+        return redirect()->route("room-index")->with('status', 'Sukses update data room');
     }
 }

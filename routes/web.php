@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\RoomController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
@@ -28,4 +29,4 @@ Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit"
 Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

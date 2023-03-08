@@ -64,12 +64,15 @@
                     <span class="user-name">Ross C. Lopez</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-                    <a class="dropdown-item" href="#"><i class="dw dw-help"></i> Help</a>
-                    <a class="dropdown-item" href="#"><i class="dw dw-logout"></i> Log Out</a>
+                    <div>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button class="btn btn-primary">Logout</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
