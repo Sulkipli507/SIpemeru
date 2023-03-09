@@ -12,18 +12,18 @@
         <div class="sidebar-menu">
             <ul>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('home') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" class="dropdown-toggle no-arrow">
+                    <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-paper-plane1"></span>
                         <span class="mtext">Landing Page</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('room-index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-hotel"></span>
                         <span class="mtext">Room</span>
                     </a>
