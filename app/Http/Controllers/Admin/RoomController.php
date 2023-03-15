@@ -41,7 +41,7 @@ class RoomController extends Controller
     }
 
     public function index(){
-        $rooms = Room::paginate(10);
+        $rooms = Room::paginate(2);
         return view("admin.room.index", ['rooms' => $rooms]);
     }
 
