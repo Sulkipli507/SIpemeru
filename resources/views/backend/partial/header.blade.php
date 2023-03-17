@@ -11,14 +11,6 @@
                 </a>
             </div>
         </div>
-        <div class="user-notification">
-            <div class="dropdown">
-                <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
-                    <i class="icon-copy dw dw-notification"></i>
-                    <span class="badge notification-active"></span>
-                </a>
-            </div>
-        </div>
         <div class="user-info-dropdown">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">

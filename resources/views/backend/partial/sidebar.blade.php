@@ -28,7 +28,7 @@
                         <span class="mtext">Room</span>
                     </a>
                 </li>
-            </ul>
-        </div>
+            </ul>           
+        </div>     
     </div>
 </div>
