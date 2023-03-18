@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\LoanController;
 use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,12 +22,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+//route rooms
 Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
 Route::post('/room/store', [RoomController::class, 'store'])->name("room-store");
 Route::get('/room/index', [RoomController::class, 'index'])->name("room-index");
 Route::delete('/room/delete/{id}',[RoomController::class, 'destroy'])->name("room-delete");
 Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit");
 Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
-Auth::routes();
+
+//route loans
+Route::get('/loan/create', [LoanController::class, 'create'])->name('loan-create');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Auth::routes();

@@ -14,7 +14,7 @@ class Loan extends Model
         'prodi',
         'phone',
         'address',
-        'objective',
+        'program',
         'start_date',
         'end_date',
         'status',

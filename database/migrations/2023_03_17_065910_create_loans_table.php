@@ -13,7 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        
+        Schema::create('loans', function (Blueprint $table) {
+            $table->id();
+            $table->char('nim',8)->unique();
+            $table->string('name');
+            $table->enum('prodi',['inf','spl','pwk']);
+            $table->string('phone');
+            $table->string('address');
+            $table->string('program');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->enum('status',['belum','tidak','disetujui']);
+            $table->string('licensor');
+            $table->timestamps();
+        });
     }
 
     /**
