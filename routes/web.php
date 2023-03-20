@@ -32,6 +32,7 @@ Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-u
 
 //route loans
 Route::get('/loan/create', [LoanController::class, 'create'])->name('loan-create');
+Route::post('loan/store', [LoanController::class, 'store'])->name('loan-store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();

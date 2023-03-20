@@ -3,7 +3,7 @@
     <div class="title text-center">
         <h4>Ajukan peminjaman</h4>
     </div>
-    <form action="#" method="post">
+    <form action="{{ route('loan-store') }}" method="post">
         @csrf
     
         <div class="mb-3">

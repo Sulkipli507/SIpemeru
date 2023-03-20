@@ -24,7 +24,6 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->enum('status',['belum','tidak','disetujui']);
-            $table->string('licensor');
             $table->timestamps();
         });
     }
