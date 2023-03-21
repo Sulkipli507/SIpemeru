@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Loan;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
 {
     public function create(){
-        return view('admin.loan.create');
+        $room = Room::all();
+        return view('admin.loan.create', compact('room'));
     }
 
     public function store(Request $request){

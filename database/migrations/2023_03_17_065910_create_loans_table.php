@@ -18,6 +18,7 @@ return new class extends Migration
             $table->char('nim',8)->unique();
             $table->string('name');
             $table->enum('prodi',['inf','spl','pwk']);
+            $table->foreignId('room_id')->constrained('rooms')->onUpdate('cascade')->onDelete('cascade');
             $table->string('phone');
             $table->string('address');
             $table->string('program');

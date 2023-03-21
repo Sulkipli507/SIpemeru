@@ -72,6 +72,23 @@
         </div>
 
         <div class="mb-3">
+          <label for="room_id" class="form-label">Nama Ruangan</label>
+          <select class="form-control" name="room_id">
+              <option label="Pilih Ruangan"></option>
+              @foreach ($room as $item)
+              <option value="{{$item->id}}">{{$item->name}}</option>
+              @endforeach
+          </select>
+  
+        @error('category_id')
+        <span class="text-danger">
+          <strong>{{$message}}</strong>
+        </span>
+        @enderror
+  
+      </div>
+
+        <div class="mb-3">
           <label for="program" class="form-label">Acara</label>
           <input name="program" type="text" class="form-control">
     
