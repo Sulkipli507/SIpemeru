@@ -80,7 +80,7 @@
               @endforeach
           </select>
   
-        @error('category_id')
+        @error('room_id')
         <span class="text-danger">
           <strong>{{$message}}</strong>
         </span>
