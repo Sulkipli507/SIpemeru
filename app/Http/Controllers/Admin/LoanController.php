@@ -28,4 +28,9 @@ class LoanController extends Controller
         ]);
         Loan::create($request->all());
     }
+
+    public function index(){
+        $loan = Loan::with("room")->paginate(5);
+        return view('admin.loan.index', compact('loan'));
+    }
 }
