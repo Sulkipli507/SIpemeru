@@ -27,10 +27,18 @@ class LoanController extends Controller
             'end_date' => 'required',
         ]);
         Loan::create($request->all());
+        return redirect()->route('loan-index');
     }
 
     public function index(){
         $loan = Loan::with("room")->paginate(5);
         return view('admin.loan.index', compact('loan'));
     }
+
+    public function destroy($id){
+        $loan = Loan::findOrfail($id);
+        $loan->delete();
+        return redirect()->route('loan-index');
+    }
+
 }
