@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-    <form action="{{ route('loan-edit', $loan->id) }}" method="post">
+    <form action="{{ route('loan-update', $loan->id) }}" method="post">
         @csrf
         @method("PUT")
         <div class="mb-3">
@@ -37,9 +37,8 @@
         <div class="mb-3">
           <label for="room_id" class="form-label">Nama Ruangan</label>
           <select class="form-control" name="room_id">
-              <option label="Pilih Ruangan"></option>
               @foreach ($room as $item)
-              <option value="{{$item->id}}">{{$item->name}}</option>
+              <option @if ($loan->room_id == $item->id) selected @endif value="{{ $item->id }}">{{$item->name}}</option>
               @endforeach
           </select>
       </div>
