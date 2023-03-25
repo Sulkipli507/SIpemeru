@@ -41,4 +41,10 @@ class LoanController extends Controller
         return redirect()->route('loan-index');
     }
 
+    public function edit($id){
+        $room = Room::all();
+        $loan = Loan::findOrFail($id);
+        return view('admin.loan.edit', compact('loan','room'));
+    }
+
 }
