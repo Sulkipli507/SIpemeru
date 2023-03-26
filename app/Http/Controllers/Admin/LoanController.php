@@ -30,8 +30,13 @@ class LoanController extends Controller
         return redirect()->route('loan-index');
     }
 
-    public function index(){
+    public function index(Request $request){
         $loan = Loan::with("room")->paginate(5);
+        $filterKeyword = $request->get('name');
+        if($filterKeyword){
+            $loan = Loan::where("name", "LIKE",
+           "%$filterKeyword%")->paginate(5);
+        }
         return view('admin.loan.index', compact('loan'));
     }
 
