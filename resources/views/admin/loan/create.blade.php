@@ -34,9 +34,9 @@
         <div class="mb-3">
           <label for="prodi" class="form-label">Program studi</label> <br>
           <select name="prodi">
-            <option>inf</option>
-            <option>spl</option>
-            <option>pwk</option>
+            <option>teknik informatika</option>
+            <option>teknik sipil</option>
+            <option>teknik perencanaan wilayah & kota</option>
         </select>
     
           @error('prodi')

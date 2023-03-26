@@ -18,9 +18,9 @@
           <label for="prodi" class="form-label">Program studi</label> <br>
           <select name="prodi">
             <option>{{ $loan->prodi }}</option>
-            <option>inf</option>
-            <option>spl</option>
-            <option>pwk</option>
+            <option>teknik informatika</option>
+            <option>teknik sipil</option>
+            <option>teknik perencanaan wilayah & kota</option>
         </select>
         </div>
     
@@ -62,8 +62,8 @@
             <label for="status" class="form-label">Status</label>
             <select name="status">
                 <option>{{ $loan->status }}</option>
-                <option>belum</option>
-                <option>tidak</option>
+                <option>belum disetujui</option>
+                <option>tidak disetujui</option>
                 <option>disetujui</option>
             </select>
         </div>

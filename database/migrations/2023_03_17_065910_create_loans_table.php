@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->char('nim',8)->unique();
             $table->string('name');
-            $table->enum('prodi',['inf','spl','pwk']);
+            $table->enum('prodi',['teknik informatika','teknik sipil','teknik perencanaan wilayah & kota']);
             $table->foreignId('room_id')->constrained('rooms')->onUpdate('cascade')->onDelete('cascade');
             $table->string('phone');
             $table->string('address');
             $table->string('program');
             $table->date('start_date');
             $table->date('end_date');
-            $table->enum('status',['belum','tidak','disetujui']);
+            $table->enum('status',['belum disetujui','tidak disetujui','disetujui']);
             $table->timestamps();
         });
     }
