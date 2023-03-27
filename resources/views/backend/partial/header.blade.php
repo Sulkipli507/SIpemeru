@@ -19,16 +19,13 @@
                     </span>
                     <span class="user-name">{{Auth::user()->name}}</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <div>
-                        <form action="{{route('logout')}}" method="POST">
-                            @csrf
-                            <button class="btn btn-primary">Logout</button>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
-        
+        <div class="mt-3 mr-3">
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <button class="btn btn-danger">Logout</button>
+            </form>
+        </div>  
     </div>
 </div>
