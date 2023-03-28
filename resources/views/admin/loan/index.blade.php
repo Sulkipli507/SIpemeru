@@ -49,9 +49,9 @@
         <td>{{$item->program}}</td>
         <td>
             @if ($item->status == 'belum disetujui')
-                <span class="badge badge-success" >{{ $item->status }}</span>
+                <span class="badge badge-warning" >{{ $item->status }}</span>
             @elseif ($item->status == 'disetujui')
-                <span class="badge badge-primary">{{ $item->status }}</span>
+                <span class="badge badge-info">{{ $item->status }}</span>
             @else
                 <span class="badge badge-danger">{{ $item->status }}</span>
             @endif
