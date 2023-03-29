@@ -25,7 +25,13 @@
                 <li>
                     <a href="{{ route('room-index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-hotel"></span>
-                        <span class="mtext">Room</span>
+                        <span class="mtext">Daftar Ruangan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('loan-index') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-calendar1"></span>
+                        <span class="mtext">Daftar Peminjaman</span>
                     </a>
                 </li>
             </ul>           
