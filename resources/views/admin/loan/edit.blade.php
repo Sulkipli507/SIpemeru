@@ -49,13 +49,13 @@
         </div>
 
         <div class="mb-3">
-          <label for="start_date" class="form-label">Tanggal awal</label>
-          <input name="start_date" type="date" class="form-control" value="{{ $loan->start_date }}">
+          <label for="start_date" class="form-label">Tanggal mulai</label>
+          <input name="start_date" type="datetime-local" class="form-control" value="{{ $loan->start_date }}">
         </div>
 
         <div class="mb-3">
-          <label for="end_date" class="form-label">Tanggal akhir</label>
-          <input name="end_date" type="date" class="form-control" value="{{ $loan->end_date }}">
+          <label for="end_date" class="form-label">Tanggal selesai</label>
+          <input name="end_date" type="datetime-local" class="form-control" value="{{ $loan->end_date }}">
         </div>
 
         <div class="mb-3">

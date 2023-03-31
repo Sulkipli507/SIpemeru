@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('program');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->enum('status',['belum disetujui','tidak disetujui','disetujui']);
             $table->timestamps();
         });

@@ -101,8 +101,8 @@
         </div>
 
         <div class="mb-3">
-          <label for="start_date" class="form-label">Tanggal awal</label>
-          <input name="start_date" type="date" class="form-control">
+          <label for="start_date" class="form-label">Tanggal mulai</label>
+          <input name="start_date" type="datetime-local" class="form-control">
     
           @error('start_date')
           <span class="text-danger">
@@ -113,8 +113,8 @@
         </div>
 
         <div class="mb-3">
-          <label for="end_date" class="form-label">Tanggal akhir</label>
-          <input name="end_date" type="date" class="form-control">
+          <label for="end_date" class="form-label">Tanggal selesai</label>
+          <input name="end_date" type="datetime-local" class="form-control">
     
           @error('end_date')
           <span class="text-danger">
