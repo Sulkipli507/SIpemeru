@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LoanController;
+use App\Http\Controllers\LandingPage\LandingPageController;
 use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [LandingPageController::class, 'index'])->name('landingPage');
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
+
+//route landingpage
 
 //route rooms
 Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
