@@ -18,13 +18,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//route landingpage
 Route::get('/', [LandingPageController::class, 'index'])->name('landingPage');
 
 Route::get('/login', function () {
     return view('auth.login');
 });
 
-//route landingpage
 
 //route rooms
 Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
