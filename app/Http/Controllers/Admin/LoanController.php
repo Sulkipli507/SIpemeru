@@ -16,7 +16,7 @@ class LoanController extends Controller
 
     public function store(Request $request){
         $this->validate($request , [
-            'nim' => 'required',
+            'nim' => 'required|unique:loans',
             'name' => 'required',
             'prodi' => 'required',
             'room_id' => 'required',
