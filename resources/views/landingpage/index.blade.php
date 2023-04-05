@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Foody - Organic Food Website Template</title>
+    <title>SIpemaru</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,8 +43,8 @@
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
-                <small><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-                <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
+                <small><i class="fa fa-map-marker-alt me-2"></i>Majene, Sulbar</small>
+                <small class="ms-4"><i class="fa fa-envelope me-2"></i>admin@gmail.com</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small>Follow us:</small>
@@ -66,8 +66,8 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="#home" class="nav-item nav-link">Home</a>
                     <a href="#about" class="nav-item nav-link">Tentang</a>
-                    <a href="#loan" class="nav-item nav-link">Peminjaman</a>
                     <a href="#room" class="nav-item nav-link">Ruangan</a>
+                    <a href="#loan" class="nav-item nav-link">Peminjaman</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
@@ -143,16 +143,17 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="{{ asset('landingpage/img/about.jpg')}}">
+                            <img class="img-fluid w-100" src="{{ asset('landingpage/img/about-1.png')}}">
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="display-5 mb-4">Best Organic Fruits And Vegetables</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                        <h1 class="display-5 mb-4">Sistem informasi peminjaman ruangan</h1>
+                        <p class="mb-4">Sistem informasi peminjaman ruangan adalah suatu sistem yang digunakan untuk mengatur dan memfasilitasi proses peminjaman ruangan yang diterapkan di Universitas Sulawesi Barat.</p>
+                        <p class="mb-4">Beberapa keuntungan dari sistem informasi peminjaman ruangan antara lain :</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Meningkatkan efisiensi dan efektivitas penggunaan ruangan</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Menghindari konflik jadwal</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Mengurangi beban administrasi</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Meningkatkan transparansi terkait peminjaman ruangan</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +163,7 @@
 
 
     <!-- Feature Start -->
-    <section id="loan">
+    <section id="room">
         <div class="container-fluid bg-light bg-icon my-5 py-6">
             <div class="container">
                 <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -202,7 +203,7 @@
 
 
     <!-- Product Start -->
-    <section id="room">
+    <section id="loan">
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-0 gx-5 align-items-end">
