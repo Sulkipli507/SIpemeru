@@ -43,5 +43,7 @@ Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loa
 Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
 Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
 
+Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();
