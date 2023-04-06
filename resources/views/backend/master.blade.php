@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>SIpemaru</title>
+	<title>SIpemeru</title>
 
 	<!-- Site favicon -->
 	@include('backend.partial.link')
