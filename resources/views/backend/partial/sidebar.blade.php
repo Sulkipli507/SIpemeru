@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('landingpage') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-paper-plane1"></span>
                         <span class="mtext">Landing Page</span>
                     </a>

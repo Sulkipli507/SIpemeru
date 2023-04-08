@@ -64,21 +64,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="#home" class="nav-item nav-link">Home</a>
+                    <a href="#home" class="nav-item nav-link">Beranda</a>
                     <a href="#about" class="nav-item nav-link">Tentang</a>
                     <a href="#room" class="nav-item nav-link">Ruangan</a>
                     <a href="#loan" class="nav-item nav-link">Peminjaman</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                        <small class="fa fa-search text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                        <small class="fa fa-user text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                        <small class="fa fa-shopping-bag text-body"></small>
-                    </a>
+                    <a class="btn btn-success" href="{{ route('login') }}">Login</a>
                 </div>
             </div>
         </nav>

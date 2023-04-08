@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //route landingpage
-Route::get('/', [LandingPageController::class, 'index'])->name('landingPage');
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 
 Route::get('/login', function () {
     return view('auth.login');
