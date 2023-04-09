@@ -44,6 +44,7 @@ Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit'
 Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
 
 Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
+Route::post('landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();

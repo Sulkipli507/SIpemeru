@@ -170,10 +170,135 @@
                             <h4 class="mb-3">{{$item->name}}</h4>
                             <p class="mb-2"><b> Kapasitas : </b> {{$item->capacity}} Orang</p>
                             <p class="mb-4"><b> Fasilitas : </b> {{$item->facility}}</p>
-                            <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Pinjam sekarang</a>
+                            <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#form">Pinjam sekarang</a>
                         </div>
                     </div>
                     @endforeach  
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="form">
+        <div class="container-fluid bg-light bg-icon my-5 py-6">
+            <div class="container">
+                <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">form peminjaman</h1>
+                    <p>isi form untuk melakukan peminjaman</p>
+                </div>
+
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                        <form action="{{ route('lp-store') }}" method="post">
+                            @csrf
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nim" class="form-label">NIM :</label>
+                                    <input name="nim" type="text" class="form-control">
+
+                                    @error('nim')
+                                    <span class="text-danger">
+                                    <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Nama Peminjam</label>
+                                    <input name="name" type="text" class="form-control" >
+
+                                    @error('name')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="prodi" class="form-label">Program studi</label> <br>
+                                    <select name="prodi">
+                                        <option>teknik informatika</option>
+                                        <option>teknik sipil</option>
+                                        <option>teknik perencanaan wilayah & kota</option>
+                                    </select>
+
+                                    @error('prodi')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">No handphone</label>
+                                    <input name="phone" type="text" class="form-control">
+
+                                    @error('phone')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="address" class="form-label">Alamat</label>
+                                    <input name="address" type="text" class="form-control">
+
+                                    @error('address')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="room_id" class="form-label">Nama Ruangan</label>
+                                    <select class="form-control" name="room_id">
+                                        <option label="Pilih Ruangan"></option>
+                                        @foreach ($rooms as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+
+                                    @error('room_id')
+                                    <span class="text-danger">
+                                    <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-12">
+                                    <label for="program" class="form-label">Acara</label>
+                                    <input name="program" type="text" class="form-control">
+                              
+                                    @error('program')
+                                    <span class="text-danger">
+                                      <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="start_date" class="form-label">Tanggal mulai</label>
+                                    <input name="start_date" type="datetime-local" class="form-control">
+
+                                    @error('start_date')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="end_date" class="form-label">Tanggal selesai</label>
+                                    <input name="end_date" type="datetime-local" class="form-control">
+
+                                    @error('end_date')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Kirim</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
