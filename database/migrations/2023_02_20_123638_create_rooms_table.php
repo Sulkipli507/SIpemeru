@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer("capacity");
             $table->string("image");
             $table->string("facility");
+            $table->string("format");
             $table->timestamps();
         });
     }

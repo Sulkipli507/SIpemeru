@@ -67,6 +67,18 @@
 
     </div>
 
+    <div class="mb-3">
+      <label for="format" class="form-label">Format surat</label>
+      <input name="format" type="file" class="form-control">
+
+      @error('format')
+      <span class="text-danger">
+        <strong>{{$message}}</strong>
+      </span>
+      @enderror
+
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection

@@ -15,11 +15,12 @@ class RoomController extends Controller
 
     public function store(Request $request){
         $this->validate($request , [
-            'code' => 'required|unique:rooms',
+            'code' => 'required|unique',
             'name' => 'required',
             'capacity' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpg|max:2048',
             'facility' => 'required',
+            'format' => 'required|mimes:pdf'
         ]);
         
         $rooms = new Room;
@@ -34,7 +35,19 @@ class RoomController extends Controller
             
             $rooms->image = $image;
             } 
+        
         $rooms->facility = $request->get('facility');
+
+        if($request->file('format')){
+ 
+            $format = $request->file('format')
+            ->store('rooms-format', 'public');
+
+            $rooms->format = $format;
+            }
+
+        
+
         $rooms->save();
         // Room::create($request->all());
         return redirect()->route("room-index");
@@ -77,8 +90,17 @@ class RoomController extends Controller
         }
 
         $rooms->facility = $request->get('facility');
-        $rooms->save();
 
+        $new_format = $request->file('format');
+        if($new_format){
+            if($rooms->format && file_exists(storage_path('app/public/' . $rooms->format))){
+                Storage::delete('public/'. $rooms->format);
+            }
+            $new_format_path = $new_format->store('rooms-format', 'public');
+            $rooms->format = $new_format_path;
+        }
+
+        $rooms->save();
         return redirect()->route("room-index");
     }
 }

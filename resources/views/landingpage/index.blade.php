@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('landingpage/css/style.css')}}" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -982,6 +984,7 @@
     </div>
     <!-- Blog End -->
 
+    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -1038,8 +1041,7 @@
     </div>
     <!-- Footer End -->
 
-
-
+    
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
