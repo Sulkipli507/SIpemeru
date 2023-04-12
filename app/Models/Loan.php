@@ -17,10 +17,10 @@ class Loan extends Model
         'address',
         'room_id',
         'program',
+        'letter',
         'start_date',
         'end_date',
         'status',
-        'letter'
     ];
 
     public function room(){

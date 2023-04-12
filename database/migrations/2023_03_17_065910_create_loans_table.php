@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('program');
+            $table->string('letter');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->enum('status',['belum disetujui','tidak disetujui','disetujui']);
-            $table->string('letter');
             $table->timestamps();
         });
     }

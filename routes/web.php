@@ -36,8 +36,6 @@ Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit"
 Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
 
 //route loans
-Route::get('/loan/create', [LoanController::class, 'create'])->name('loan-create');
-Route::post('loan/store', [LoanController::class, 'store'])->name('loan-store');
 Route::get('/loan/index', [LoanController::class, 'index'])->name('loan-index');
 Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loan-delete');
 Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');

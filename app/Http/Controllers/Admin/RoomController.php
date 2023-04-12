@@ -46,8 +46,6 @@ class RoomController extends Controller
             $rooms->format = $format;
             }
 
-        
-
         $rooms->save();
         // Room::create($request->all());
         return redirect()->route("room-index");

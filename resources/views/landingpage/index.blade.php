@@ -168,14 +168,16 @@
                     @foreach ($rooms as $item)
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="bg-white text-center h-100 p-4 p-xl-5">
-                            <img class="img-fluid mb-4" src="{{asset('storage/' . $item->image)}}" width="1080px" alt="">
+                            <img class="img-fluid mb-4 rounded" src="{{asset('storage/' . $item->image)}}" width="1080px" alt="">
                             <h4 class="mb-3">{{$item->name}}</h4>
                             <p class="mb-2"><b> Kapasitas : </b> {{$item->capacity}} Orang</p>
-                            <p class="mb-4"><b> Fasilitas : </b> {{$item->facility}}</p>
+                            <p class="mb-2"><b> Fasilitas : </b> {{$item->facility}}</p>
+                            <p> <b> Format surat : </b> <a class="btn btn-outline-primary" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
+                            
                             <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#form">Pinjam sekarang</a>
                         </div>
                     </div>
-                    @endforeach  
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -192,7 +194,7 @@
 
                 <div class="row g-5 justify-content-center">
                     <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                        <form action="{{ route('lp-store') }}" method="post">
+                        <form action="{{ route('lp-store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -207,7 +209,7 @@
 
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="name" class="form-label">Nama Peminjam</label>
+                                    <label for="name" class="form-label">Nama Peminjam :</label>
                                     <input name="name" type="text" class="form-control" >
 
                                     @error('name')
@@ -217,7 +219,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="prodi" class="form-label">Program studi</label> <br>
+                                    <label for="prodi" class="form-label">Program studi :</label> <br>
                                     <select name="prodi">
                                         <option>teknik informatika</option>
                                         <option>teknik sipil</option>
@@ -231,7 +233,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="phone" class="form-label">No handphone</label>
+                                    <label for="phone" class="form-label">No handphone :</label>
                                     <input name="phone" type="text" class="form-control">
 
                                     @error('phone')
@@ -241,7 +243,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="address" class="form-label">Alamat</label>
+                                    <label for="address" class="form-label">Alamat :</label>
                                     <input name="address" type="text" class="form-control">
 
                                     @error('address')
@@ -251,7 +253,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="room_id" class="form-label">Nama Ruangan</label>
+                                    <label for="room_id" class="form-label">Nama Ruangan :</label>
                                     <select class="form-control" name="room_id">
                                         <option label="Pilih Ruangan"></option>
                                         @foreach ($rooms as $item)
@@ -265,18 +267,31 @@
                                     </span>
                                     @enderror
                                 </div>
-                                <div class="col-12">
-                                    <label for="program" class="form-label">Acara</label>
+                                <div class="col-md-6">
+                                    <label for="program" class="form-label">Acara :</label>
                                     <input name="program" type="text" class="form-control">
-                              
+
                                     @error('program')
                                     <span class="text-danger">
-                                      <strong>{{$message}}</strong>
+                                    <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="letter" class="form-label">Scan surat :</label>
+                                    <input name="letter" type="file" class="form-control" >
+
+                                    @error('letter')
+                                    <span class="text-danger">
+                                        <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
-                                    <label for="start_date" class="form-label">Tanggal mulai</label>
+                                    <label for="start_date" class="form-label">Tanggal mulai :</label>
                                     <input name="start_date" type="datetime-local" class="form-control">
 
                                     @error('start_date')
@@ -285,8 +300,9 @@
                                     </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
-                                    <label for="end_date" class="form-label">Tanggal selesai</label>
+                                    <label for="end_date" class="form-label">Tanggal selesai :</label>
                                     <input name="end_date" type="datetime-local" class="form-control">
 
                                     @error('end_date')
@@ -295,8 +311,9 @@
                                     </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Kirim</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">lapor peminjaman</button>
                                 </div>
                             </div>
                         </form>

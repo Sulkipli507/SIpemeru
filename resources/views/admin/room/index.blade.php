@@ -42,11 +42,7 @@
             <td>{{$item->name}}</td>
             <td>{{$item->capacity}}</td>
             <td>
-                @if($item->image)
-                    <img src="{{asset('storage/' . $item->image)}}" width="70px"/>
-                @else 
-                    No image
-                @endif
+                <img src="{{asset('storage/' . $item->image)}}" width="70px"/>
             </td>
             <td>{{$item->facility}}</td>
             <td>     

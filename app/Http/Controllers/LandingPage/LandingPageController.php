@@ -7,6 +7,7 @@ use App\Models\Loan;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
+
 class LandingPageController extends Controller
 {
     public function index (){
@@ -23,10 +24,30 @@ class LandingPageController extends Controller
             'phone' => 'required',
             'address' => 'required',
             'program' => 'required',
+            'letter' => 'required|mimes:pdf',
             'start_date' => 'required',
             'end_date' => 'required',
         ]);
-        Loan::create($request->all());
+
+        $loan = new Loan;
+        $loan->nim = $request->get('nim');
+        $loan->name = $request->get('name');
+        $loan->prodi = $request->get('prodi');
+        $loan->room_id = $request->get('room_id');
+        $loan->phone = $request->get('phone');
+        $loan->address = $request->get('address');
+        $loan->program = $request->get('program');
+        if($request->file('letter')){
+ 
+            $letter = $request->file('letter')
+            ->store('loan-letter', 'public');
+            
+            $loan->letter = $letter;
+            }
+        $loan->start_date = $request->get('start_date');
+        $loan->end_date = $request->get('end_date');
+        
+        $loan->save();
         return redirect()->route('landingpage');
     }
 
