@@ -15,7 +15,7 @@ class RoomController extends Controller
 
     public function store(Request $request){
         $this->validate($request , [
-            'code' => 'required|unique',
+            'code' => 'required|unique:rooms',
             'name' => 'required',
             'capacity' => 'required',
             'image' => 'required|image|mimes:jpg|max:2048',

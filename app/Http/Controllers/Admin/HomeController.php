@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Room;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $countRoom = Room::count();
-        return view('admin.dashboard.home', compact('countRoom'));
+        $countUser = User::count();
+        return view('admin.dashboard.home', compact('countRoom','countUser'));
     }
 }
