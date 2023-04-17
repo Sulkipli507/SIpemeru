@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Loan;
 use App\Models\Room;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
         $countRoom = Room::count();
         $countUser = User::count();
-        return view('admin.dashboard.home', compact('countRoom','countUser'));
+        $countLoan = Loan::count();
+        return view('admin.dashboard.home', compact('countRoom','countUser','countLoan'));
     }
 }
