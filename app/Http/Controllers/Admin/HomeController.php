@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $countRoom = Room::count();
         $countUser = User::count();
-        $countLoan = Loan::count();
+        $countLoan = Loan:: where('status', 'disetujui')->count();
         return view('admin.dashboard.home', compact('countRoom','countUser','countLoan'));
     }
 }
