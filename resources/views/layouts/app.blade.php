@@ -13,6 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.print.min.css') }}" media="print">
+    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>

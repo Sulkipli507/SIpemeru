@@ -12,9 +12,9 @@ class LandingPageController extends Controller
 {
     public function index (){
         $rooms = Room::all();
-        return view('landingpage.index', ['rooms' => $rooms]);
+        // $loans = Loan::where('status', 'disetujui')->get();
+        return view('landingpage.index', compact('rooms'));
     }
-
     public function store(Request $request){
         $this->validate($request , [
             'nim' => 'required|unique:loans',
@@ -50,5 +50,6 @@ class LandingPageController extends Controller
         $loan->save();
         return redirect()->route('landingpage');
     }
+
 
 }
