@@ -11,13 +11,21 @@ class LoanController extends Controller
 {
     public function index(Request $request){
         $loan = Loan::with("room")->paginate(5);
+
         $filterKeyword = $request->get('name');
         if($filterKeyword){
             $loan = Loan::where("name", "LIKE",
            "%$filterKeyword%")->paginate(5);
         }
-        return view('admin.loan.index',['loan' => $loan]);
+
+        return view('admin.loan.index', compact('loan'));
     }
+
+    public function indexUser(){
+        $loanUser = Loan::where('user_id', auth()->id())->get();
+        return view('admin.loan.indexUser', compact('loanUser'));
+    }
+
 
     public function destroy($id){
         $loan = Loan::findOrfail($id);

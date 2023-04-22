@@ -40,10 +40,15 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
 });
 
+Route::middleware('auth', 'CheckRole:user')->group(function(){
+    Route::get('/loan/indexUser', [LoanController::class, 'indexUser'])->name('loan-indexUser');
+});
+
 Route::middleware('auth', 'CheckRole:admin,user')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
+
 
 Auth::routes();

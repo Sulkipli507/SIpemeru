@@ -10,6 +10,7 @@ class Loan extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'user_id',
         'nim',
         'name',
         'prodi',
@@ -25,5 +26,9 @@ class Loan extends Model
 
     public function room(){
         return $this->BelongsTo(Room::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

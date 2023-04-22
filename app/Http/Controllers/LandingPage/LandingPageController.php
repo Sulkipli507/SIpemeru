@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Loan;
 use App\Models\Room;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
 {
@@ -17,7 +17,7 @@ class LandingPageController extends Controller
     }
     public function store(Request $request){
         $this->validate($request , [
-            'nim' => 'required|unique:loans',
+            'nim' => 'required',
             'name' => 'required',
             'prodi' => 'required',
             'room_id' => 'required',
@@ -30,6 +30,7 @@ class LandingPageController extends Controller
         ]);
 
         $loan = new Loan;
+        $loan->user_id = Auth::user()->id;
         $loan->nim = $request->get('nim');
         $loan->name = $request->get('name');
         $loan->prodi = $request->get('prodi');

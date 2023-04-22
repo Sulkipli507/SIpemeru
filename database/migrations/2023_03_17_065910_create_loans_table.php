@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->char('nim',8)->unique();
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->char('nim',8);
             $table->string('name');
             $table->enum('prodi',['teknik informatika','teknik sipil','teknik perencanaan wilayah & kota']);
             $table->foreignId('room_id')->constrained('rooms')->onUpdate('cascade')->onDelete('cascade');
