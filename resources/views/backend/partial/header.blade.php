@@ -13,7 +13,7 @@
         </div>
         <div class="user-info-dropdown">
             <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                <a class="dropdown-toggle" href="#" role="button">
                     <span class="user-icon">
                         <img src="{{asset('backend/vendors/images/photo1.jpg')}}" alt="">
                     </span>
