@@ -38,6 +38,7 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loan-delete');
     Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
+    Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
 });
 
 Route::middleware('auth', 'CheckRole:user')->group(function(){

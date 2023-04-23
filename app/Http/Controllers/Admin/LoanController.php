@@ -45,4 +45,9 @@ class LoanController extends Controller
         return redirect()->route('loan-index');
     }
 
+    public function show($id){
+        $loan = Loan::where('id', $id)->with('room')->first();
+        return view ('admin.loan.show', compact('loan'));
+    }
+
 }
