@@ -88,7 +88,7 @@
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
 				<a href="login.html">
-					<img src="{{asset("backend/vendors/images/deskapp-logo.svg")}}" alt="">
+					<img src="{{asset("backend/vendors/images/sp-loading.png")}}" alt="">
 				</a>
 			</div>
 		</div>
