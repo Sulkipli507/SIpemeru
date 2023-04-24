@@ -39,10 +39,11 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
     Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
+
 });
 
 Route::middleware('auth', 'CheckRole:user')->group(function(){
-    Route::get('/loan/indexUser', [LoanController::class, 'indexUser'])->name('loan-indexUser');
+    Route::get('/loan/index/user', [LoanController::class, 'indexUser'])->name('loan-index-user');
 });
 
 Route::middleware('auth', 'CheckRole:admin,user')->group(function(){
@@ -50,6 +51,5 @@ Route::middleware('auth', 'CheckRole:admin,user')->group(function(){
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
-
 
 Auth::routes();
