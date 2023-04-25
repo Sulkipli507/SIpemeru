@@ -39,11 +39,13 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
     Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
-
+    
 });
 
 Route::middleware('auth', 'CheckRole:user')->group(function(){
-    Route::get('/loan/index/user', [LoanController::class, 'indexUser'])->name('loan-index-user');
+    Route::get('/loan/user/showUser/{id}', [LoanController::class, 'showUser'])->name('show-user');
+    Route::get('/loan/user/index', [LoanController::class, 'indexUser'])->name('loan-user-index');
+    Route::delete('/loan/user/delete/{id}',[LoanController::class, 'destroyUser'])->name('delete-user');
 });
 
 Route::middleware('auth', 'CheckRole:admin,user')->group(function(){

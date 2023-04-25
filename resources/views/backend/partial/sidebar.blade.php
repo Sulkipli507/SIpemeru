@@ -33,12 +33,12 @@
                 @endif
                 
                 <li>
-                    <a href="{{ route('loan-index-user') }}" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('loan-user-index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-calendar1"></span>
                         <span class="mtext">Daftar Peminjaman</span>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="{{ route('landingpage') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-paper-plane1"></span>

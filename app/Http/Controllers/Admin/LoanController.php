@@ -21,12 +21,6 @@ class LoanController extends Controller
         return view('admin.loan.index', compact('loan'));
     }
 
-    public function indexUser(){
-        $loanUser = Loan::where('user_id', auth()->id())->get();
-        return view('admin.loan.indexUser', compact('loanUser'));
-    }
-
-
     public function destroy($id){
         $loan = Loan::findOrfail($id);
         $loan->delete();
@@ -50,4 +44,18 @@ class LoanController extends Controller
         return view ('admin.loan.show', compact('loan'));
     }
 
+    // Loan User
+    public function indexUser(){
+        $loanUser = Loan::where('user_id', auth()->id())->get();
+        return view('admin.loan.indexUser', compact('loanUser'));
+    }
+
+    public function destroyUser(){
+        $loanUser = Loan::where('user_id', auth()->id())->delete();
+        return view('admin.loan.indexUser', compact('loanUser'));
+    }
+    public function showUser($id){
+        $loan = Loan::where('user_id', auth()->id())->with('room')->first();
+        return view ('admin.loan.showUser', compact('loan'));
+    }
 }

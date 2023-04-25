@@ -357,35 +357,7 @@
                 </div>
                 <div class="tab-content">
                     <h1>test</h1>
-                    <div id="calendar"></div>
                     
-                    {{-- @push('scripts')
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function() {
-                                var calendarEl = document.getElementById('calendar');
-
-                                var calendar = new FullCalendar.Calendar(calendarEl, {
-                                    initialView: 'dayGridMonth',
-                                    headerToolbar: {
-                                        left: 'prev,next today',
-                                        center: 'title',
-                                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                                    },
-                                    events: [
-                                        @foreach($loans as $event)
-                                        {
-                                            title: '{{ $event->name }}',
-                                            start: '{{ $event->start_date }}',
-                                            end: '{{ $event->end_date }}',
-                                        },
-                                        @endforeach
-                                    ]
-                                });
-
-                                calendar.render();
-                            });
-                        </script>
-                    @endpush --}}
                 </div>
             </div>
         </div>
