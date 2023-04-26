@@ -15,6 +15,23 @@ class LandingPageController extends Controller
         // $loans = Loan::where('status', 'disetujui')->get();
         return view('landingpage.index', compact('rooms'));
     }
+
+    public function getData()
+    {
+        $loans = Loan::where('status', 'disetujui')->get(); // mengambil semua data loans
+        $events = array();
+
+        foreach ($loans as $loan) {
+            $event = array(
+                'title' => $loan->room->name,
+                'start' => $loan->start_date,
+                'end' => $loan->end_date,
+            );
+            array_push($events, $event);
+        }
+
+        return view('landingpage.calendar')->with('events', json_encode($events)); // mengirim data dalam format JSON ke view
+    }
     public function store(Request $request){
         $this->validate($request , [
             'nim' => 'required',

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\LandingPage\LandingPageController;
+use App\Http\Controllers\CalendarController;
 use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -53,5 +54,7 @@ Route::middleware('auth', 'CheckRole:admin,user')->group(function(){
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
+
+Route::get('/calendar-data', [LandingPageController::class, 'getData'])->name('calendar');
 
 Auth::routes();

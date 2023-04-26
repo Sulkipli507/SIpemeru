@@ -16,7 +16,6 @@
                         <span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
                     </a>
                 </li>
-                
                 @if (Auth::user()->role == "admin")
                 <li>
                     <a href="{{ route('room-index') }}" class="dropdown-toggle no-arrow">
@@ -30,15 +29,14 @@
                         <span class="mtext">Daftar Peminjaman</span>
                     </a>
                 </li>
-                @endif
-                
+                @else
                 <li>
                     <a href="{{ route('loan-user-index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-calendar1"></span>
                         <span class="mtext">Daftar Peminjaman</span>
                     </a>
                 </li>
-
+                @endif
                 <li>
                     <a href="{{ route('landingpage') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-paper-plane1"></span>
