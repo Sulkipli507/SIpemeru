@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 class LoanController extends Controller
 {
     public function index(Request $request){
-        $loan = Loan::with("room")->paginate(5);
+        $loan = Loan::with("room")->paginate(10);
 
         $filterKeyword = $request->get('name');
         if($filterKeyword){
             $loan = Loan::where("name", "LIKE",
-           "%$filterKeyword%")->paginate(5);
+           "%$filterKeyword%")->paginate(10);
         }
 
         return view('admin.loan.index', compact('loan'));
