@@ -33,14 +33,15 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::get('/room/index', [RoomController::class, 'index'])->name("room-index");
     Route::delete('/room/delete/{id}',[RoomController::class, 'destroy'])->name("room-delete");
     Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name("room-edit");
-    Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update");
+    Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update"); 
+});
 
+Route::middleware('auth', 'CheckRole:staff')->group(function(){
     Route::get('/loan/index', [LoanController::class, 'index'])->name('loan-index');
     Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loan-delete');
     Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
     Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
-    
 });
 
 Route::middleware('auth', 'CheckRole:user')->group(function(){
@@ -49,7 +50,7 @@ Route::middleware('auth', 'CheckRole:user')->group(function(){
     Route::delete('/loan/user/delete/{id}',[LoanController::class, 'destroyUser'])->name('delete-user');
 });
 
-Route::middleware('auth', 'CheckRole:admin,user')->group(function(){
+Route::middleware('auth', 'CheckRole:admin,staff,user')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');

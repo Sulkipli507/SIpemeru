@@ -23,6 +23,7 @@
                         <span class="mtext">Daftar Ruangan</span>
                     </a>
                 </li>
+                @elseif (Auth::user()->role == "staff")
                 <li>
                     <a href="{{ route('loan-index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-calendar1"></span>

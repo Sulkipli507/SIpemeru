@@ -18,11 +18,20 @@
           </div>
         </div>
       </div>
+      @elseif (Auth::user()->role == "staff")
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="card text-dark bg-info">
           <div class="card-body text-center">
-            <h5 class="card-title">Jumlah Peminjaman</h5>
-            <h1>{{ $countLoan }}</h1>
+            <h5 class="card-title">Peminjaman Disetujui</h5>
+            <h1>{{ $countLoan1 }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card text-dark bg-secondary">
+          <div class="card-body text-center">
+            <h5 class="card-title">Peminjaman Belum Disetujui</h5>
+            <h1>{{ $countLoan2 }}</h1>
           </div>
         </div>
       </div>

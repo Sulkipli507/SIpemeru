@@ -178,7 +178,7 @@
                             <p class="mb-2"><b> Fasilitas : </b> {{$item->facility}}</p>
                             <p> <b> Format surat : </b> <a class="btn btn-outline-primary" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
                             
-                            <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#form">Pinjam sekarang</a>
+                            <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#loan">Pinjam sekarang</a>
                         </div>
                     </div>
                     @endforeach
