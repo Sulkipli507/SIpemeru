@@ -96,8 +96,8 @@
                                 <div class="row justify-content-start">
                                     <div class="col-lg-7">
                                         <h1 class="display-2 mb-5 animated slideInDown">Sistem informasi peminjaman ruangan</h1>
-                                        <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Ruangan</a>
-                                        <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Peminjaman</a>
+                                        <a href="#room" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Ruangan</a>
+                                        <a href="#loan" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Peminjaman</a>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +186,6 @@
             </div>
         </div>
     </section>
-
 
     <section id="loan">
         <div class="container-fluid bg-light bg-icon my-5 py-6">

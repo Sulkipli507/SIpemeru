@@ -13,19 +13,19 @@
         </div>
         <div class="user-info-dropdown">
             <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     <span class="user-icon">
                         <img src="{{asset('backend/vendors/images/photo1.jpg')}}" alt="">
                     </span>
                     <span class="user-name">{{Auth::user()->name}}</span>
                 </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <a class="dropdown-item" href="#"><button class="btn btn-danger">Logout</button></a>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="mt-3 mr-3">
-            <form action="{{route('logout')}}" method="POST">
-                @csrf
-                <button class="btn btn-danger">Logout</button>
-            </form>
-        </div>  
     </div>
 </div>
