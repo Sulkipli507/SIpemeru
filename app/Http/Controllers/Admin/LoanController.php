@@ -9,15 +9,8 @@ use Illuminate\Http\Request;
 
 class LoanController extends Controller
 {
-    public function index(Request $request){
-        $loan = Loan::with("room")->paginate(10);
-
-        $filterKeyword = $request->get('name');
-        if($filterKeyword){
-            $loan = Loan::where("name", "LIKE",
-           "%$filterKeyword%")->paginate(10);
-        }
-
+    public function index(){
+        $loan = Loan::all();
         return view('admin.loan.index', compact('loan'));
     }
 
@@ -55,7 +48,7 @@ class LoanController extends Controller
         return view('admin.loan.indexUser', compact('loanUser'));
     }
     public function showUser($id){
-        $loan = Loan::where('user_id', auth()->id())->with('room')->first();
+        $loan = Loan::where('user_id', auth()->id())->first();
         return view ('admin.loan.showUser', compact('loan'));
     }
 }

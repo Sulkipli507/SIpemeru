@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Loan;
 use App\Models\Room;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

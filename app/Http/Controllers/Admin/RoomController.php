@@ -51,14 +51,9 @@ class RoomController extends Controller
         return redirect()->route("room-index");
     }
 
-    public function index(Request $request){
-        $rooms = Room::paginate(5);
-        $filterKeyword = $request->get('name');
-        if($filterKeyword){
-            $rooms = Room::where("name", "LIKE",
-           "%$filterKeyword%")->paginate(5);
-        }
-        return view("admin.room.index", ['rooms' => $rooms]);
+    public function index(){
+        $rooms = Room::all();
+        return view("admin.room.index", compact('rooms'));
     }
 
     public function destroy($id){

@@ -176,7 +176,7 @@
                             <h4 class="mb-3">{{$item->name}}</h4>
                             <p class="mb-2"><b> Kapasitas : </b> {{$item->capacity}} Orang</p>
                             <p class="mb-2"><b> Fasilitas : </b> {{$item->facility}}</p>
-                            <p> <b> Format surat : </b> <a class="btn btn-outline-primary" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
+                            <p> <b> Format surat : </b> <a class="btn btn-outline-primary rounded-pill" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
                             
                             <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#loan">Pinjam sekarang</a>
                         </div>
