@@ -57,18 +57,18 @@ class RoomController extends Controller
     }
 
     public function destroy($id){
-        $rooms = Room::findOrfail($id);
+        $rooms = Room::find($id);
         $rooms->delete();
         return redirect()->route("room-index");
     }
 
     public function edit($id){
-        $rooms = Room::findOrfail($id);
+        $rooms = Room::find($id);
         return view("admin.room.edit", compact("rooms"));
     }
 
     public function update(Request $request, $id){
-        $rooms = Room::findOrfail($id);
+        $rooms = Room::find($id);
         $rooms->code = $request->get('code');
         $rooms->name = $request->get('name');
         $rooms->capacity = $request->get('capacity');
@@ -76,7 +76,8 @@ class RoomController extends Controller
         $new_image = $request->file('image');
         if($new_image){
             if($rooms->image && file_exists(storage_path('app/public/' . $rooms->image))){
-                Storage::delete('public/'. $rooms->image);
+                 Storage::delete('public/'. $rooms->image);
+                //  return ( $rooms->image);
             }
             $new_image_path = $new_image->store('rooms-images', 'public');
             $rooms->image = $new_image_path;

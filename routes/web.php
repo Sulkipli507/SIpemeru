@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 //route landingpage
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/calendar-data', [LandingPageController::class, 'getData'])->name('calendar');
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -55,7 +56,5 @@ Route::middleware('auth', 'CheckRole:admin,staff,user')->group(function(){
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
-
-Route::get('/calendar-data', [LandingPageController::class, 'getData'])->name('calendar');
 
 Auth::routes();

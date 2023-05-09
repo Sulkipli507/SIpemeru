@@ -12,7 +12,6 @@ class LandingPageController extends Controller
 {
     public function index (){
         $rooms = Room::all();
-        // $loans = Loan::where('status', 'disetujui')->get();
         return view('landingpage.index', compact('rooms'));
     }
 
@@ -68,6 +67,5 @@ class LandingPageController extends Controller
         $loan->save();
         return redirect()->route('landingpage');
     }
-
 
 }

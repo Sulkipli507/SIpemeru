@@ -15,19 +15,19 @@ class LoanController extends Controller
     }
 
     public function destroy($id){
-        $loan = Loan::findOrfail($id);
+        $loan = Loan::find($id);
         $loan->delete();
         return redirect()->route('loan-index');
     }
 
     public function edit($id){
         $room = Room::all();
-        $loan = Loan::findOrFail($id);
+        $loan = Loan::find($id);
         return view('admin.loan.edit', compact('loan','room'));
     }
 
     public function update(Request $request, $id){
-        $loan = Loan::findOrFail($id);
+        $loan = Loan::find($id);
         $loan->update($request->all());
         return redirect()->route('loan-index');
     }

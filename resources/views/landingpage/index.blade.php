@@ -71,9 +71,9 @@
                     <a href="#loan" class="nav-item nav-link">Peminjaman</a>
                     <div class="mt-3">
                         @if (Auth::user())
-                            <a class="btn btn-dark" href="{{ route('home') }}">Dashboard</a>
+                            <a class="btn btn-dark rounded-pill" href="{{ route('home') }}">Dashboard</a>
                         @else
-                            <a class="btn btn-success" href="{{ route('login') }}">Login</a>
+                            <a class="btn btn-success rounded-pill" href="{{ route('login') }}">Login</a>
                         @endif
                     </div>
                 </div>
