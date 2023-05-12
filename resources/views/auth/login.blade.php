@@ -151,6 +151,15 @@
 
 	<!-- js -->
 	@include('backend.partial.js')
+    @if (session('statusError'))
+        <script>
+            Swal.fire({
+                icon:'error',
+                title:'Oops...',
+                text:"{{ session('statusError') }}"
+            })
+        </script>
+    @endif
 
 </body>
 </html>

@@ -24,4 +24,6 @@
 
 		gtag('config', 'UA-119386393-1');
 	</script>
+
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	

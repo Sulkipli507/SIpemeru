@@ -41,17 +41,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function authenticate(Request $request){
-        $credentials = $request->validate([
-            'email' => 'required|email:dsn',
-            'password' => 'required'
-        ]);
-
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/home');
-        }
-        return back();
+    protected function authenticated(){
+        return redirect()->route('home')->with('status', 'Login berhasil!');
+    }
+    protected function sendFailedLoginResponse(){
+        return redirect()->back()->with('statusError', 'Login gagal!');
     }
 
 }
