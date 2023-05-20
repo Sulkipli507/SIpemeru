@@ -40,10 +40,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-    protected function authenticated(){
-        return redirect()->route('home')->with('status', 'Login berhasil!');
-    }
     protected function sendFailedLoginResponse(){
         return redirect()->back()->with('statusError', 'Login gagal!');
     }
