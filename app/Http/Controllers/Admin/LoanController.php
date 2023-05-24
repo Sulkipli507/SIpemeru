@@ -14,6 +14,13 @@ class LoanController extends Controller
         return view('admin.loan.index', compact('loan'));
     }
 
+    public function updateStatus(Request $request, $id){
+        $loan = Loan::findOrFail($id);
+        $loan->status = $request->status;
+        $loan->save();
+        return redirect()->back();
+    }
+
     public function destroy($id){
         $loan = Loan::find($id);
         $loan->delete();

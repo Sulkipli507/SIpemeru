@@ -29,11 +29,43 @@
                         </svg></a></td>
                     <td> 
                         @if ($item->status == 'belum disetujui')
-                            <span class="badge badge-warning" >{{ $item->status }}</span>
+                            <span class="badge badge-warning mb-2">{{ $item->status }}</span>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="sm-col-6 md-col-4">
+                                        <form class="mb-1" action="{{ route('loan-updateStatus', $item->id) }}" method="POST">
+                                            @csrf
+                                            @method("PUT")
+                                            <input type="hidden" name="status" value="tidak disetujui">
+                                            <button type="submit" class="btn btn-danger"><i class="icon-copy dw dw-cancel"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="sm-col-6 md-col-8">
+                                        <form action="{{ route('loan-updateStatus', $item->id) }}" method="POST">
+                                            @csrf
+                                            @method("PUT")
+                                            <input type="hidden" name="status" value="disetujui">
+                                            <button type="submit" class="btn btn-success"><i class="icon-copy dw dw-checked"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>               
                         @elseif ($item->status == 'disetujui')
-                            <span class="badge badge-info">{{ $item->status }}</span>
+                            <span class="badge badge-info mb-2">{{ $item->status }}</span>
+                            <form action="{{ route('loan-updateStatus', $item->id) }}" method="POST">
+                                @csrf
+                                @method("PUT")
+                                <input type="hidden" name="status" value="tidak disetujui">
+                                <button type="submit" class="btn btn-danger"><i class="icon-copy dw dw-cancel"></i></button>
+                            </form>
                         @else
-                            <span class="badge badge-danger">{{ $item->status }}</span>
+                            <span class="badge badge-danger mb-2">{{ $item->status }}</span>
+                            <form action="{{ route('loan-updateStatus', $item->id) }}" method="POST">
+                                @csrf
+                                @method("PUT")
+                                <input type="hidden" name="status" value="disetujui">
+                                <button type="submit" class="btn btn-success"><i class="icon-copy dw dw-checked"></i></button>
+                            </form>
                         @endif
                     </td>
                     <td>
@@ -43,7 +75,6 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                 <a class="dropdown-item" href="{{ route('loan-show', $item->id) }}"><i class="dw dw-eye"></i> View</a>
-                                <a class="dropdown-item" href="{{route("loan-edit", $item->id)}}"><i class="dw dw-edit2"></i> Edit</a>
                                 <form action="{{route("loan-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">
                                     @csrf
                                     @method('DELETE')

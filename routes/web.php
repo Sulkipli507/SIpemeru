@@ -40,7 +40,7 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
 Route::middleware('auth', 'CheckRole:staff')->group(function(){
     Route::get('/loan/index', [LoanController::class, 'index'])->name('loan-index');
     Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loan-delete');
-    Route::get('/loan/edit/{id}', [LoanController::class, 'edit'])->name('loan-edit');
+    Route::put('/loan/updateStatus/{id}', [LoanController::class, 'updateStatus'])->name('loan-updateStatus');
     Route::put('/loan/update/{id}', [LoanController::class, 'update'])->name('loan-update');
     Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
 });

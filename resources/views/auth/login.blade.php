@@ -77,7 +77,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Login SIpemaru</title>
+	<title>Login</title>
 
 	<!-- Site favicon -->
 	@include('backend.partial.link')
