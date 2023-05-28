@@ -4,8 +4,6 @@ use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LoanController;
 use App\Http\Controllers\LandingPage\LandingPageController;
-use App\Http\Controllers\CalendarController;
-use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +26,7 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::middleware('auth', 'CheckRole:admin')->group(function(){
+Route::middleware(['auth', 'CheckRole:admin'])->group(function(){
     Route::get('/room/create', [RoomController::class, 'create'])->name("room-create");
     Route::post('/room/store', [RoomController::class, 'store'])->name("room-store");
     Route::get('/room/index', [RoomController::class, 'index'])->name("room-index");
@@ -37,7 +35,7 @@ Route::middleware('auth', 'CheckRole:admin')->group(function(){
     Route::put('/room/update/{id}', [RoomController::class, 'update'])->name("room-update"); 
 });
 
-Route::middleware('auth', 'CheckRole:staff')->group(function(){
+Route::middleware(['auth', 'CheckRole:staff'])->group(function(){
     Route::get('/loan/index', [LoanController::class, 'index'])->name('loan-index');
     Route::delete('/loan/delete/{id}',[LoanController::class, 'destroy'])->name('loan-delete');
     Route::put('/loan/updateStatus/{id}', [LoanController::class, 'updateStatus'])->name('loan-updateStatus');
@@ -45,13 +43,13 @@ Route::middleware('auth', 'CheckRole:staff')->group(function(){
     Route::get('/loan/show/{id}', [LoanController::class, 'show'])->name('loan-show');
 });
 
-Route::middleware('auth', 'CheckRole:user')->group(function(){
+Route::middleware(['auth', 'CheckRole:user'])->group(function(){
     Route::get('/loan/user/showUser/{id}', [LoanController::class, 'showUser'])->name('show-user');
     Route::get('/loan/user/index', [LoanController::class, 'indexUser'])->name('loan-user-index');
     Route::delete('/loan/user/delete/{id}',[LoanController::class, 'destroyUser'])->name('delete-user');
 });
 
-Route::middleware('auth', 'CheckRole:admin,staff,user')->group(function(){
+Route::middleware(['auth', 'CheckRole:admin,staff,user'])->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
     Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
