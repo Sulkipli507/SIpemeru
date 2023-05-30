@@ -30,9 +30,10 @@ class HomeController extends Controller
 
         $countLoan1 = Loan::where('status', 'disetujui')->count();
         $countLoan2 = Loan::where('status', 'belum disetujui')->count();
+        $countLoan3 = Loan::where('status', 'tidak disetujui')->count();
 
         $countLoanUser = Loan::where('user_id', auth()->id())->get()->count();
         
-        return view('admin.dashboard.home', compact('countRoom','countUser','countLoan1','countLoan2','countLoanUser'));
+        return view('admin.dashboard.home', compact('countRoom','countUser','countLoan1','countLoan2','countLoan3','countLoanUser'));
     }
 }
