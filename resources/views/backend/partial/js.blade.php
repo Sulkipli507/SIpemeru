@@ -17,3 +17,9 @@
 <script src="{{asset('backend/src/plugins/datatables/js/vfs_fonts.js')}}"></script>
 <!-- Datatable Setting js -->
 <script src="{{asset('backend/vendors/scripts/datatable-setting.js')}}"></script>
+<script src="{{asset('backend/vendors/scripts/dashboard2.js')}}"></script>
+<script src="{{asset('backend/src/plugins/jQuery-Knob-master/jquery.knob.min.js')}}"></script>
+<script src="{{asset('backend/src/plugins/highcharts-6.0.7/code/highcharts.js')}}"></script>
+<script src="{{asset('backend/src/plugins/highcharts-6.0.7/code/highcharts-more.js')}}"></script>
+<script src="{{asset('backend/src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js')}}"></script>
+<script src="{{asset('backend/src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
