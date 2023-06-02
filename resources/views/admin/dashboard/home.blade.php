@@ -8,7 +8,7 @@
         <div class="card-box pd-30 height-100-p">
           <div class="progress-box text-center">
              <h1>{{ $countRoom }}</h1>
-            <h5 class="text-light-orange padding-top-10 h5">Jumlah Ruangan</h5>
+            <h5 class="text-green padding-top-10 h5">Jumlah Ruangan</h5>
           </div>
         </div>
       </div>

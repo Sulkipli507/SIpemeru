@@ -1,7 +1,6 @@
 @extends('backend.master')
 @section('content')
 <div class="title text-center">
-    <h4>Tambah Data Ruangan</h4>
 </div>
 <form action="{{route("room-store")}}" enctype="multipart/form-data" method="post">
     @csrf

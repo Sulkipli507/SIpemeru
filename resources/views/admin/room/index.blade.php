@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mb-3">
-        <a href="{{route('room-create')}}"><button class="btn btn-primary">Tambah data</button></a>
+        <a href="{{route('room-create')}}"><button class="btn btn-primary"><i class="icon-copy dw dw-add"></i></button></a>
     </div>
 
     <div class="card-box mb-30">
