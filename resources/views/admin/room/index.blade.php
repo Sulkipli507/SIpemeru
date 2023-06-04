@@ -1,5 +1,9 @@
 @extends('backend.master')
 
+@section('header')
+  <h3>Daftar Ruangan</h3>
+@endsection
+
 @section('content')
     <div class="mb-3">
         <a href="{{route('room-create')}}"><button class="btn btn-primary"><i class="icon-copy dw dw-add"></i></button></a>

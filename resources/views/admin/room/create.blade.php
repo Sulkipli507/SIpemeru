@@ -1,4 +1,9 @@
 @extends('backend.master')
+
+@section('header')
+  <h3>Tambah Data Ruangan</h3>
+@endsection
+
 @section('content')
 <div class="title text-center">
 </div>

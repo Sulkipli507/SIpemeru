@@ -1,5 +1,9 @@
 @extends('backend.master')
 
+@section('header')
+  <h3>Daftar Peminjaman</h3>
+@endsection
+
 @section('content')
 
 <div class="card-box mb-30">

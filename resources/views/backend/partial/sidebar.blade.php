@@ -33,7 +33,7 @@
                 @elseif (Auth::user()->role == "staff")
                 <li>
                     <a href="{{ route('loan-index') }}" class="dropdown-toggle no-arrow">
-                        <span class="dw dw-notebook"></span>
+                        <span class="micon dw dw-notebook"></span>
                         <span class="mtext">Daftar Peminjaman</span>
                     </a>
                 </li>

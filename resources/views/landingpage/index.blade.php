@@ -69,6 +69,7 @@
                     <a href="#about" class="nav-item nav-link">Tentang</a>
                     <a href="#room" class="nav-item nav-link">Ruangan</a>
                     <a href="#loan" class="nav-item nav-link">Peminjaman</a>
+                    <a href="{{ route('calendar') }}" class="nav-item nav-link">Kalender</a>
                     <div class="mt-3">
                         @if (Auth::user())
                             <a class="btn btn-dark rounded-pill" href="{{ route('home') }}">Dashboard</a>
@@ -159,29 +160,45 @@
     </section>
     <!-- About End -->
 
-
-    <!-- Feature Start -->
     <section id="room">
-        <div class="container-fluid bg-light bg-icon my-5 py-6">
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                    <h1 class="display-5 mb-3">Daftar Ruangan</h1>
-                    <p>Cek jadwal peminjaman sebelum meminjam ruangan <a href="{{ route('calendar') }}">cek disini</a></p>
-                </div>
-                <div class="row g-4">
-                    @foreach ($rooms as $item)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="bg-white text-center h-100 p-4 p-xl-5">
-                            <img class="img-fluid mb-4 rounded" src="{{asset('storage/' . $item->image)}}" width="1080px" alt="">
-                            <h4 class="mb-3">{{$item->name}}</h4>
-                            <p class="mb-2"><b> Kapasitas : </b> {{$item->capacity}} Orang</p>
-                            <p class="mb-2"><b> Fasilitas : </b> {{$item->facility}}</p>
-                            <p> <b> Format surat : </b> <a class="btn btn-outline-primary rounded-pill" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
-                            
-                            <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#loan">Pinjam sekarang</a>
+                <div class="row g-0 gx-5 align-items-end">
+                    <div class="col-lg-6">
+                        <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                            <h1 class="display-5 mb-3">Daftar Ruangan</h1>
+                            <p>Cek jadwal peminjaman sebelum meminjam ruangan <a href="{{ route('calendar') }}">cek disini</a></p>
                         </div>
                     </div>
-                    @endforeach
+                </div>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            @php
+                                $delay = 0;
+                            @endphp
+                            @foreach ($rooms as $item)
+                                @php
+                                    $delay += 0.2;
+                                @endphp
+                            <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ $delay }}s">
+                                <div class="product-item">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid w-100" src="{{asset('storage/' . $item->image)}}" alt="">
+                                        <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <h4 class="d-block h5 mb-2">{{$item->name}}</h4>
+                                        <p class="d-block mb-2"> Kapasitas : {{$item->capacity}} Orang</p>
+                                        <p class="d-block mb-2"> Fasilitas : {{$item->facility}}</p>
+                                        <p> Format surat : <a class="btn btn-outline-primary rounded-pill" href="{{ asset('storage/'.$item->format) }}">Download</a></p>
+                                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="#loan">Pinjam sekarang</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -224,6 +241,7 @@
                                 <div class="col-md-6">
                                     <label for="prodi" class="form-label">Program studi :</label> <br>
                                     <select name="prodi">
+                                        <option label="Pilih prodi"></option></option>
                                         <option>teknik informatika</option>
                                         <option>teknik sipil</option>
                                         <option>teknik perencanaan wilayah & kota</option>
