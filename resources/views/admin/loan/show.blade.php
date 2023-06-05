@@ -1,5 +1,9 @@
 @extends('backend.master')
 
+@section('header')
+    <h4>Detail Peminjaman</h4>
+@endsection
+
 @section('content')
     <p>Nim : {{ $loan->nim }}</p>
     <p>Nama : {{ $loan->name }}</p>
