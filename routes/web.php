@@ -47,12 +47,12 @@ Route::middleware(['auth', 'CheckRole:user'])->group(function(){
     Route::get('/loan/user/showUser/{id}', [LoanController::class, 'showUser'])->name('show-user');
     Route::get('/loan/user/index', [LoanController::class, 'indexUser'])->name('loan-user-index');
     Route::delete('/loan/user/delete/{id}',[LoanController::class, 'destroyUser'])->name('delete-user');
+    Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
 
 Route::middleware(['auth', 'CheckRole:admin,staff,user'])->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/landingpage/room', [LandingPageController::class, 'index'])->name('lp-room');
-    Route::post('/landingpage/store', [LandingPageController::class, 'store'])->name('lp-store');
 });
 
 Auth::routes();

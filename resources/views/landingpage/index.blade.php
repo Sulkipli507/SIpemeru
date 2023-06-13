@@ -45,14 +45,14 @@
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><i class="fa fa-map-marker-alt me-2"></i>Majene, Sulbar</small>
-                <small class="ms-4"><i class="fa fa-envelope me-2"></i>admin@gmail.com</small>
+                <small class="ms-4"><i class="fa fa-envelope me-2"></i>sulkiply04@gmail.com</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small>Follow us:</small>
-                <a class="text-body ms-3" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="text-body ms-3" href=""><i class="fab fa-twitter"></i></a>
-                <a class="text-body ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="text-body ms-3" href=""><i class="fab fa-instagram"></i></a>
+                <a class="text-body ms-3" href="https://www.facebook.com/LangitHitam.duapuluhempat.24"><i class="fab fa-facebook-f"></i></a>
+                <a class="text-body ms-3" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-body ms-3" href="https://www.linkedin.com/in/sulkipli-zul-345348245"><i class="fab fa-linkedin-in"></i></a>
+                <a class="text-body ms-3" href="https://instagram.com/sulkiply507?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -67,9 +67,9 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="#home" class="nav-item nav-link">Beranda</a>
                     <a href="#about" class="nav-item nav-link">Tentang</a>
+                    <a href="#calendar" class="nav-item nav-link">Kalender</a>
                     <a href="#room" class="nav-item nav-link">Ruangan</a>
                     <a href="#loan" class="nav-item nav-link">Peminjaman</a>
-                    <a href="{{ route('calendar') }}" class="nav-item nav-link">Kalender</a>
                     <div class="mt-3">
                         @if (Auth::user())
                             <a class="btn btn-dark rounded-pill" href="{{ route('home') }}">Dashboard</a>
@@ -160,6 +160,28 @@
     </section>
     <!-- About End -->
 
+    <section id="calendar">
+        <div class="container-fluid bg-light bg-icon py-6">
+            <div class="container">
+                <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">Kalender peminjaman</h1>
+                    <p>Cek jadwal peminjaman sebelum meminjam ruangan <a class="btn btn-primary rounded-pill" href="{{ route('calendar') }}">cek disini</a></p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                        <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
+                        <p class="mb-4">Status pada kalender yang berwarna hijau adalah jadwal ruangan yang telah disetujui</p>
+                    </div>
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                        <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
+                        <p class="mb-4">Status pada kalender yang berwarna Orange adalah jadwal ruangan yang belum dikonfirmasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="room">
         <div class="container-xxl py-5">
             <div class="container">
@@ -167,7 +189,6 @@
                     <div class="col-lg-6">
                         <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                             <h1 class="display-5 mb-3">Daftar Ruangan</h1>
-                            <p>Cek jadwal peminjaman sebelum meminjam ruangan <a href="{{ route('calendar') }}">cek disini</a></p>
                         </div>
                     </div>
                 </div>
@@ -363,7 +384,7 @@
                         &copy; <a href="#">SIpemeru</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Designed By <a href="#">Sulkipli</a>
+                        Designed By <a href="https://www.facebook.com/ZL">Sulkipli</a>
                     </div>
                 </div>
             </div>

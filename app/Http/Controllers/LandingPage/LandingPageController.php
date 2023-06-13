@@ -17,7 +17,8 @@ class LandingPageController extends Controller
 
     public function getData()
     {
-        $loans = Loan::where('status', 'disetujui')->get(); // mengambil semua data loans
+        $loans = Loan::where('status', 'disetujui')->get(); // mengambil semua data yang disetujui dari tabel loans
+        $loansNoConfirm = Loan::where('status', 'belum disetujui')->get(); // mengambil semua data yang belum disetujui dari tabel loans
         $events = array();
 
         foreach ($loans as $loan) {
@@ -25,6 +26,17 @@ class LandingPageController extends Controller
                 'title' => $loan->room->name,
                 'start' => $loan->start_date,
                 'end' => $loan->end_date,
+                'color' => 'green'
+            );
+            array_push($events, $event);
+        }
+
+        foreach ($loansNoConfirm as $loan) {
+            $event = array(
+                'title' => $loan->room->name,
+                'start' => $loan->start_date,
+                'end' => $loan->end_date,
+                'color' => 'orange'
             );
             array_push($events, $event);
         }

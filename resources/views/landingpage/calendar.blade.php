@@ -33,7 +33,7 @@
                         editable: false,
                         eventLimit: true,
                         eventRender: function(event, element) {
-                            element.find('.fc-title').append('<br/>' + event.start.format('MMM DD, YYYY h:mm a') + ' - ' + event.end.format('MMM DD, YYYY h:mm a'));
+                            element.find('.fc-title').append(' - ' + event.start.format('MMM DD, YYYY h:mm a') + ' - ' + event.end.format('MMM DD, YYYY h:mm a'));
                         }
                     });
 
