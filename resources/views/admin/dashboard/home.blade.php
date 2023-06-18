@@ -4,8 +4,7 @@
   <h3>Dashboard</h3>
 @endsection
 
-@section('content')
-
+@section('dashboard')
     <div class="row clearfix progress-box">
       @if (Auth::user()->role == "admin")
       <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
@@ -59,6 +58,5 @@
         </div>
       </div>
       @endif       
-    </div>
-  
+    </div> 
 @endsection

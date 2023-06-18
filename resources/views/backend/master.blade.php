@@ -37,9 +37,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="pd-30 bg-white border-radius-4 box-shadow mb-30">
-                    @yield('content')
-				</div>
+				@if(View::hasSection('dashboard'))
+					@yield('dashboard')
+				@else
+					<div class="pd-30 bg-white border-radius-4 box-shadow mb-30">
+						@yield('content')
+					</div>
+				@endif				
 			</div>
 
             {{-- Footer --}}
